@@ -4,7 +4,12 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "docker:build": "docker-compose up -d --build",
+        "docker:install": "docker-compose exec app composer install",
+        "docker:key": "docker-compose exec app php artisan key:generate",
+        "docker:migrate": "docker-compose exec app php artisan migrate",
+        "docker:full": "npm run docker:build && npm run docker:install && npm run docker:key && npm run docker:migrate"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
