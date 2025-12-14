@@ -8,7 +8,7 @@ services:
         user: arunikaltim
         uid: 1000
     image: arunikaltim/app
-    container_name: app
+    container_name: arunikaltim_app
     restart: unless-stopped
     working_dir: /var/www
     volumes:
@@ -21,7 +21,7 @@ services:
 
   db:
     image: mysql:8.0
-    container_name: db
+    container_name: arunikaltim_db
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
